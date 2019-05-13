@@ -3,6 +3,19 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="goods.DAO.GoodsMapper">
-	
-	
+	<insert id="insertGoods" parameterType="goods.po.Goods" >
+		insert into goods(id,goodsName,goodsKind,goodsPrice,goodsNumble) values(#{id},#{goodsName},#{goodsKind},#{goodsPrice},#{goodsNumble})
+	</insert>
+	<select id="selectAllGoods" resultType="goods.po.Goods">
+		select * from goods
+	</select>
+	<update id="updateGoods" parameterType="goods.po.Goods">
+		update goods set goodsName = #{goodsName},goodsKind = #{goodsKind} ,goodsNumble = #{goodsNumble} where id = #{id}
+	</update>
+	<select id="selectOne" parameterType="int" resultType="goods.po.Goods">
+		select * from goods where id = #{id}
+	</select>
+	<delete id="deleteOneGoods" parameterType="int">
+		delete goods where id = #{id}
+	</delete>
 </mapper>

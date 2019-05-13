@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Goods implements Serializable{
 	
+	
+	private static final long serialVersionUID = 1L;
 	private int id ;//商品编号
 	private String goodsName;//商品名字
 	private int goodsKind;//商品种类
